@@ -15,7 +15,7 @@ notes.post('/notes', (req, res) => {
     }
 
     const {title, text} = req.body;
-    const id = Math.max(...db.map((x) => x.id)) >= 0 ? Math.max(...db.map((x) => x.id))+1 : 0;
+    const id = Math.max(...db.map((x) => x.id)) >= 0 ? Math.max(...db.map((x) => x.id))+1 : 1;
     
     db.push({ title, text, id });
 
