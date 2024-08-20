@@ -6,12 +6,12 @@ notes.get('/notes', (req, res) => {
     if(!db){
         return res.status(500).json('db not found');
     };
-    res.status(200).json(db);
+    return res.status(200).json(db);
 })
 
 notes.post('/notes', (req, res) => {
     if(!req.body){
-        res.status(400).json('Form is empty');
+        return res.status(400).json('Form is empty');
     }
 
     const {title, text} = req.body;
@@ -20,16 +20,18 @@ notes.post('/notes', (req, res) => {
     db.push({ title, text, id });
 
     fs.writeFile('db/db.json', JSON.stringify(db), (err)=>{
-        if(err){res.status(500).json(err)};
+        if(err){
+            return res.status(500).json(err)
+        };
     });
 
-    res.status(201).json('Note Created');
+    return res.status(201).json('Note Created');
     
 })
 
 notes.delete('/notes/:id', (req, res) => {
     if(!req.params.id){
-        res.status(500).json('internal server error');
+        return res.status(500).json('internal server error');
     }
 
     var deletedNote = null;
@@ -47,7 +49,7 @@ notes.delete('/notes/:id', (req, res) => {
     fs.writeFile('db/db.json', JSON.stringify(db), (err)=>{
         if(err){res.status(500).json(err)};
     }); 
-    res.status(200).json('Note deleted successfully!');
+    return res.status(200).json('Note deleted successfully!');
     
 })
 
