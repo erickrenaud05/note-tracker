@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.use(routes);
+const port = process.env.PORT || 3001
 
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/notes.html'));
@@ -18,4 +19,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
-app.listen(3001, () => console.log('Now listening'));
+app.listen(port, () => console.log('Now listening'));
