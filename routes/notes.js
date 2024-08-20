@@ -2,16 +2,19 @@ const notes = require('express').Router();
 const fs = require('fs');
 const db = require('../db/db.json');
 
-notes.get('/api/notes', (req, res) => {
+notes.get('/notes', (req, res) => {
     //code here
-    res.status(200).json(db)
+    if(!db){
+        res.status(500).json('db not found');
+    };
+    res.status(200).json(db);
 })
 
-notes.post('/api/notes', (req, pos) => {
+notes.post('/notes', (req, pos) => {
     //code here
 })
 
-notes.delete('/api/notes/:id', (req, res) => {
+notes.delete('/notes/:id', (req, res) => {
     //code here
 })
 
