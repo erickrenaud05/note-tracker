@@ -9,7 +9,7 @@
 [Questions](#questions)
 
 ## Description
-This application uses node js and express js as backend and html, js and css as front end. This website is hosted by render and is used to track notes. This notes are saved in a single db.json file. In the future, these notes would be stored in a database and notes will belong to unique individials. Here is a screenshot of the website: [Website-Preview](preview\note-taker-preview.jpeg).
+This application uses node js and express js as backend and html, js and css as front end. This website is hosted by render and is used to track notes. This notes are saved in a single db.json file. In the future, these notes would be stored in a database and notes will belong to unique individials. Here is a screenshot of the website: [Website-Preview](preview/note-taker-preview.jpeg).
 
 ## Usage
 To use this application, visit https://note-tracker-mw02.onrender.com/notes. Once on the site, simply file out the note title and note text form and save note. The notes will be displayed in the left. If you wish to see the note text, simply click on said note in the left, and the form will be replaced by the note. You can delete the notes by simply pressing the garbage icon.
